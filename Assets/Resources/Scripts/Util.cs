@@ -45,10 +45,10 @@ public static class Util
     {
 
         //queue points
-        List<float> xq, yq, zq;
-        xq = new List<float>();
-        yq = new List<float>();
-        zq = new List<float>();
+        Queue<float> xq, yq, zq;
+        xq = new Queue<float>();
+        yq = new Queue<float>();
+        zq = new Queue<float>();
 
 
         int move_count = 0;
@@ -80,9 +80,9 @@ public static class Util
                 if (visited[xx, yy, zz]) continue;
                 //if (inMatrix[xx,yy,zz] == bloco intransponivel) continue; 
 
-                xq.Add(xx);
-                yq.Add(yy);
-                zq.Add(zz);
+                xq.Enqueue(xx);
+                yq.Enqueue(yy);
+                zq.Enqueue(zz);
 
                 visited[xx, yy, zz] = true;
                 nodes_left_in_next_layer++;
@@ -96,20 +96,15 @@ public static class Util
             Vector3 prevv = start;
             visited[toInt(start.x), toInt(start.y), toInt(start.z)] = true;
 
-            xq.Add(start.x);
-            yq.Add(start.y);
-            zq.Add(start.z);
+            xq.Enqueue(start.x);
+            yq.Enqueue(start.y);
+            zq.Enqueue(start.z);
             
             while (xq.Count > 0)
             {
-                float x = xq[xq.Count - 1];
-                xq.RemoveAt(xq.Count - 1);
-                
-                float y = yq[yq.Count - 1];
-                yq.RemoveAt(yq.Count - 1);
-
-                float z = zq[zq.Count - 1];
-                zq.RemoveAt(zq.Count - 1);
+                float x = xq.Dequeue();
+                float y = yq.Dequeue();
+                float z = zq.Dequeue();
 
                 if (Util.vec3eq(inMatrix[Util.toInt(x), Util.toInt(y), Util.toInt(z)], end))
                 {
@@ -120,23 +115,12 @@ public static class Util
                 explore(Util.toInt(x), Util.toInt(y), Util.toInt(z));
                 nodes_left_in_layer--;
 
-                //prev[toInt(x), toInt(y), toInt(z)] = prevv; //prev of start is start
 
-                if (setPrev)
-                {
-                    prevv.x = x;
-                    prevv.y = y;
-                    prevv.z = z;
-
-                    setPrev = false;
-                }
                 if (nodes_left_in_layer == 0)
                 {
                     nodes_left_in_layer = nodes_left_in_next_layer;
                     nodes_left_in_next_layer = 0;
                     move_count++;
-
-                    setPrev = true;
                 }
         
             }

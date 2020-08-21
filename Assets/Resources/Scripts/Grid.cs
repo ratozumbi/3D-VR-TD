@@ -68,12 +68,23 @@ public class Grid : MonoBehaviour
                 }
             }
         }
+
+        UpdatePath();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            UpdatePath();
+        }
+    }
 
+    void UpdatePath()
+    {
+        var path = Util.FindPath(gridVec3, size, start, target);
+        GetComponent<LineRenderer>().positionCount = path.Count;
+        GetComponent<LineRenderer>().SetPositions(path.ToArray());
     }
     public override string ToString()
     {

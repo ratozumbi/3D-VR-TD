@@ -10,6 +10,5 @@ public abstract class Cube : MonoBehaviour
     {
         cubeGrid = GameObject.FindGameObjectWithTag("Grid").GetComponent<Grid>();
     }
-
     
 }
