@@ -332,6 +332,8 @@ MonoBehaviour:
     type: 3}
   cubeTarget: {fileID: 1256114073403042997, guid: 25be64c6d7c70624c990d15f9b039c05,
     type: 3}
+  cubeBlock: {fileID: 1256114073403042997, guid: 4e07d6d1bdd80db469f3613522efcc4c,
+    type: 3}
   textObj: {fileID: 9098687926562852945, guid: c4c242a3ae355d04d93f68722e0f35fd, type: 3}
   size: 8
 --- !u!4 &1762276998

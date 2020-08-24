@@ -106,3 +106,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d01c529fb8b69449837c45050ecc80b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cubeGrid: {fileID: 0}
+  type: 2

@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CubeEmpty : Cube
+public class CubeBlock : Cube
 {
+    
     // Start is called before the first frame update
     void Start()
     {
-        type = CubeType.empty;
+        type = CubeType.block;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }

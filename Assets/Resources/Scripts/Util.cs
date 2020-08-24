@@ -11,6 +11,15 @@ public static class Util
             left.z == right.z);
     }
 
+    public static Vector3 ToGridPosition(GameObject go)
+    {
+        return new Vector3(Util.toInt(go.transform.localPosition.x), Util.toInt(go.transform.localPosition.y), Util.toInt(go.transform.localPosition.z));
+    }
+    public static GameObject ObjFromGrid(GameObject[,,] mat, Vector3 pos)
+    {
+        return mat[Util.toInt(pos.x), Util.toInt(pos.y), Util.toInt(pos.z)];
+    }
+
     public static Tuple<int, int, int> CoordinatesOf<T>( T value,  T[,,] inMatrix)
     {
         int xx = inMatrix.GetLength(0); // width
@@ -41,7 +50,7 @@ public static class Util
     /// <param name="start">The start node</param>
     /// <param name="end">The end node</param>
     /// <returns>A Vector3 list of points in path from start to end</returns>
-    public static List<Vector3> FindPath(Vector3[,,] inMatrix, int dimensionSize, Vector3 start, Vector3 end)
+    public static List<Vector3> FindPath(Vector3[,,] inMatrix, int dimensionSize, Vector3 start, Vector3 end, Func<Vector3, bool> specialCheck)
     {
 
         //queue points
@@ -67,18 +76,37 @@ public static class Util
         int[] dy = { 0, 0, -1, +1, 0, 0 };
         int[] dz = { 0, 0, 0, 0, -1, +1 };
 
-        void explore(int x, int y, int z)
+        visited[toInt(start.x), toInt(start.y), toInt(start.z)] = true;
+
+        xq.Enqueue(start.x);
+        yq.Enqueue(start.y);
+        zq.Enqueue(start.z);
+        
+        prev[Util.toInt(start.x), Util.toInt(start.y), Util.toInt(start.z)] = new Vector3(start.x,start.y, start.z);
+
+        while (xq.Count > 0)
         {
+            float x = xq.Dequeue();
+            float y = yq.Dequeue();
+            float z = zq.Dequeue();
+
+            if (Util.vec3eq(inMatrix[Util.toInt(x), Util.toInt(y), Util.toInt(z)], end))
+            {
+                reached_end = true;
+                break;
+            }
+
+            //explore(Util.toInt(x), Util.toInt(y), Util.toInt(z));
             for (int i = 0; i < dx.Length; i++)
             {
-                int xx = x + dx[i];
-                int yy = y + dy[i];
-                int zz = z + dz[i];
+                int xx = Util.toInt(x + dx[i]);
+                int yy = Util.toInt(y + dy[i]);
+                int zz = Util.toInt(z + dz[i]);
 
                 if (xx < 0 || yy < 0 || zz < 0) continue;
-                if ( yy >= dimensionSize || xx >= dimensionSize|| zz >= dimensionSize) continue;
+                if (yy >= dimensionSize || xx >= dimensionSize || zz >= dimensionSize) continue;
                 if (visited[xx, yy, zz]) continue;
-                //if (inMatrix[xx,yy,zz] == bloco intransponivel) continue; 
+                if (specialCheck(new Vector3(xx,yy,zz))) continue;
 
                 xq.Enqueue(xx);
                 yq.Enqueue(yy);
@@ -88,79 +116,51 @@ public static class Util
                 nodes_left_in_next_layer++;
                 prev[xx, yy, zz] = new Vector3(x, y, z);
             }
+
+            nodes_left_in_layer--;
+
+
+            if (nodes_left_in_layer == 0)
+            {
+                nodes_left_in_layer = nodes_left_in_next_layer;
+                nodes_left_in_next_layer = 0;
+                move_count++;
+            }
+
         }
 
-        int solve()
+        //if (reached_end)
+        //{
+        //    Debug.Log("move count " + move_count);
+        //    return move_count;
+        //}
+        //else
+        //{
+        //    return -1;
+        //}
+
+        List<Vector3> path = new List<Vector3>();
+        Vector3 previous = new Vector3(-1,-1,-1);
+        for (Vector3 at = end;
+            /*!Util.vec3eq(at, start) &&*/ !Util.vec3eq(at, previous);
+            at = prev[toInt(at.x), toInt(at.y), toInt(at.z)])
         {
-            bool setPrev = false;
-            Vector3 prevv = start;
-            visited[toInt(start.x), toInt(start.y), toInt(start.z)] = true;
+            previous = at;
+            path.Add(at);
+        }
+        //path.Add(start); //TODO: check for disjoint graph
+        path.Reverse();
 
-            xq.Enqueue(start.x);
-            yq.Enqueue(start.y);
-            zq.Enqueue(start.z);
-            
-            while (xq.Count > 0)
-            {
-                float x = xq.Dequeue();
-                float y = yq.Dequeue();
-                float z = zq.Dequeue();
-
-                if (Util.vec3eq(inMatrix[Util.toInt(x), Util.toInt(y), Util.toInt(z)], end))
-                {
-                    reached_end = true;
-                    break;
-                }
-
-                explore(Util.toInt(x), Util.toInt(y), Util.toInt(z));
-                nodes_left_in_layer--;
-
-
-                if (nodes_left_in_layer == 0)
-                {
-                    nodes_left_in_layer = nodes_left_in_next_layer;
-                    nodes_left_in_next_layer = 0;
-                    move_count++;
-                }
-        
-            }
-
-            if (reached_end)
-            {
-                Debug.Log("move count " + move_count);
-                return move_count;
-            }
-            else
-            {
-                return -1;
-            }
+        if (Util.vec3eq(path[0], start))
+        {
+            return path;
+        }
+        else
+        {
+            return null;
         }
 
-        solve();
-
-        List<Vector3> reconstruct(){
-
-            List<Vector3> path = new List<Vector3>();
-            for (Vector3 at = end;
-                !Util.vec3eq(at, start) ;
-                at = prev[toInt(at.x), toInt(at.y), toInt(at.z)])
-            {
-                path.Add(at);
-            }
-            path.Add(start);
-            path.Reverse();
-            //TODO: check for disjoint graph
-            if (Util.vec3eq(path[0], start))
-            {
-                return path;
-            }
-            else
-            {
-                return null;
-            }
-        }
-
-        return reconstruct();
+        //return reconstruct();
     }
 
     //prevent float point issues
