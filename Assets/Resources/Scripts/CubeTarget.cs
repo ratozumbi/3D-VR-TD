@@ -20,7 +20,7 @@ public class CubeTarget : Cube
 
     void OnCollisionEnter(Collision collision)
     {
-        print("collide");
+        Debug.Log("collide to target");
         if (collision.gameObject.tag == "Enemy")
         {
             Destroy(collision.gameObject);

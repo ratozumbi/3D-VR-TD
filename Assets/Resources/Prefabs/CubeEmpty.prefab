@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2454629407242814507}
   - component: {fileID: 6467914941093102799}
   - component: {fileID: 8121193438656039742}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CubeEmpty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,3 +106,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2be413dee3213649865424d5464782d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cubeGrid: {fileID: 0}
+  type: 0
