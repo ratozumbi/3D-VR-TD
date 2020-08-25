@@ -4,11 +4,26 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 public class OffsetGrab : XRGrabInteractable
 {
+    private XRBaseInteractor interactor1;
+    private XRBaseInteractor interactor2;
     private Vector3 interactorPosition = Vector3.zero;
     private Quaternion interactorRotation = Quaternion.identity;
-    
+
+    private void Start()
+    {
+        //TODO: make these public to unity editor
+        movementType = MovementType.Kinematic;
+        smoothPosition = true;
+        smoothPositionAmount = 1f;
+        smoothRotation = true;
+        smoothRotationAmount = 1f;
+
+        throwOnDetach = false;
+    }
+
     protected override void OnSelectEnter(XRBaseInteractor interactor)
     {
+        print(isSelected);
         base.OnSelectEnter(interactor);
         StoreInteractor(interactor);
         MatchAttachmentPoints(interactor);
