@@ -1,0 +1,33 @@
+{
+    "name": "GameControlls",
+    "maps": [
+        {
+            "name": "Movement",
+            "id": "42ea79d5-3e50-44dd-bca5-9e43ab7862f7",
+            "actions": [
+                {
+                    "name": "Scalling",
+                    "type": "Button",
+                    "id": "39733f45-2637-4b9d-883e-b0dfe0fe28de",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0ed727c0-d87d-4348-b225-b40e4086f21d",
+                    "path": "<XRController>{LeftHand}/gripPressed",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Scalling",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

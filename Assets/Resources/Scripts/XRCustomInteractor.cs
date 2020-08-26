@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.Interaction;
+using UnityEngine.XR.Interaction.Toolkit;
 
-public class XRCustomInteractor : XRDirectInteractor
+public class XRCustomInteractor : XRBaseInteractor
 {
+    public override void GetValidTargets(List<XRBaseInteractable> validTargets)
+    {
+        throw new System.NotImplementedException();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
