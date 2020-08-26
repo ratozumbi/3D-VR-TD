@@ -23,7 +23,6 @@ public class OffsetGrab : XRGrabInteractable
 
     protected override void OnSelectEnter(XRBaseInteractor interactor)
     {
-        print(isSelected);
         base.OnSelectEnter(interactor);
         StoreInteractor(interactor);
         MatchAttachmentPoints(interactor);
