@@ -2,29 +2,92 @@
     "name": "GameControlls",
     "maps": [
         {
-            "name": "Movement",
+            "name": "Map",
             "id": "42ea79d5-3e50-44dd-bca5-9e43ab7862f7",
             "actions": [
                 {
-                    "name": "Scalling",
+                    "name": "StartScale",
                     "type": "Button",
                     "id": "39733f45-2637-4b9d-883e-b0dfe0fe28de",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
+                },
+                {
+                    "name": "StopScale",
+                    "type": "Button",
+                    "id": "348f8af6-7440-4871-8acf-b6dcf9ab91a2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)"
                 }
             ],
             "bindings": [
                 {
-                    "name": "",
-                    "id": "0ed727c0-d87d-4348-b225-b40e4086f21d",
-                    "path": "<XRController>{LeftHand}/gripPressed",
-                    "interactions": "Hold",
+                    "name": "Button With One Modifier",
+                    "id": "0720b917-5d51-4d4b-9652-661783111394",
+                    "path": "ButtonWithOneModifier",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Scalling",
-                    "isComposite": false,
+                    "action": "StartScale",
+                    "isComposite": true,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "7feb9789-3509-401b-b9ec-4024ac6277d5",
+                    "path": "<XRController>{RightHand}/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StartScale",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "button",
+                    "id": "9ebb7797-8af9-4823-b2f9-65c44ac34b09",
+                    "path": "<XRController>{LeftHand}/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StartScale",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Button With One Modifier",
+                    "id": "7c8667eb-3d3f-40c6-a84d-8824e07b3062",
+                    "path": "ButtonWithOneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StopScale",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "56b6c546-e1db-4dbd-a539-392223967592",
+                    "path": "<XRController>{RightHand}/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StopScale",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "button",
+                    "id": "f2029c9b-07c7-424f-babc-bdff0935e378",
+                    "path": "<XRController>{LeftHand}/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StopScale",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

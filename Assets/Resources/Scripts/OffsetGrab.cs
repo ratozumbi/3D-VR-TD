@@ -17,7 +17,7 @@ public class OffsetGrab : XRGrabInteractable
         smoothPositionAmount = 1f;
         smoothRotation = true;
         smoothRotationAmount = 1f;
-
+        trackRotation = false;
         throwOnDetach = false;
     }
 

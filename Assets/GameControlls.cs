@@ -15,38 +15,102 @@ public class @GameControlls : IInputActionCollection, IDisposable
     ""name"": ""GameControlls"",
     ""maps"": [
         {
-            ""name"": ""Movement"",
+            ""name"": ""Map"",
             ""id"": ""42ea79d5-3e50-44dd-bca5-9e43ab7862f7"",
             ""actions"": [
                 {
-                    ""name"": ""Scalling"",
+                    ""name"": ""StartScale"",
                     ""type"": ""Button"",
                     ""id"": ""39733f45-2637-4b9d-883e-b0dfe0fe28de"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""StopScale"",
+                    ""type"": ""Button"",
+                    ""id"": ""348f8af6-7440-4871-8acf-b6dcf9ab91a2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=1)""
                 }
             ],
             ""bindings"": [
                 {
-                    ""name"": """",
-                    ""id"": ""0ed727c0-d87d-4348-b225-b40e4086f21d"",
-                    ""path"": ""<XRController>{LeftHand}/gripPressed"",
-                    ""interactions"": ""Hold"",
+                    ""name"": ""Button With One Modifier"",
+                    ""id"": ""0720b917-5d51-4d4b-9652-661783111394"",
+                    ""path"": ""ButtonWithOneModifier"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Scalling"",
-                    ""isComposite"": false,
+                    ""action"": ""StartScale"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""7feb9789-3509-401b-b9ec-4024ac6277d5"",
+                    ""path"": ""<XRController>{RightHand}/gripPressed"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StartScale"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""button"",
+                    ""id"": ""9ebb7797-8af9-4823-b2f9-65c44ac34b09"",
+                    ""path"": ""<XRController>{LeftHand}/gripPressed"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StartScale"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Button With One Modifier"",
+                    ""id"": ""7c8667eb-3d3f-40c6-a84d-8824e07b3062"",
+                    ""path"": ""ButtonWithOneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StopScale"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""56b6c546-e1db-4dbd-a539-392223967592"",
+                    ""path"": ""<XRController>{RightHand}/gripPressed"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StopScale"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""button"",
+                    ""id"": ""f2029c9b-07c7-424f-babc-bdff0935e378"",
+                    ""path"": ""<XRController>{LeftHand}/gripPressed"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StopScale"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
     ],
     ""controlSchemes"": []
 }");
-        // Movement
-        m_Movement = asset.FindActionMap("Movement", throwIfNotFound: true);
-        m_Movement_Scalling = m_Movement.FindAction("Scalling", throwIfNotFound: true);
+        // Map
+        m_Map = asset.FindActionMap("Map", throwIfNotFound: true);
+        m_Map_StartScale = m_Map.FindAction("StartScale", throwIfNotFound: true);
+        m_Map_StopScale = m_Map.FindAction("StopScale", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -93,40 +157,49 @@ public class @GameControlls : IInputActionCollection, IDisposable
         asset.Disable();
     }
 
-    // Movement
-    private readonly InputActionMap m_Movement;
-    private IMovementActions m_MovementActionsCallbackInterface;
-    private readonly InputAction m_Movement_Scalling;
-    public struct MovementActions
+    // Map
+    private readonly InputActionMap m_Map;
+    private IMapActions m_MapActionsCallbackInterface;
+    private readonly InputAction m_Map_StartScale;
+    private readonly InputAction m_Map_StopScale;
+    public struct MapActions
     {
         private @GameControlls m_Wrapper;
-        public MovementActions(@GameControlls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Scalling => m_Wrapper.m_Movement_Scalling;
-        public InputActionMap Get() { return m_Wrapper.m_Movement; }
+        public MapActions(@GameControlls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @StartScale => m_Wrapper.m_Map_StartScale;
+        public InputAction @StopScale => m_Wrapper.m_Map_StopScale;
+        public InputActionMap Get() { return m_Wrapper.m_Map; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(MovementActions set) { return set.Get(); }
-        public void SetCallbacks(IMovementActions instance)
+        public static implicit operator InputActionMap(MapActions set) { return set.Get(); }
+        public void SetCallbacks(IMapActions instance)
         {
-            if (m_Wrapper.m_MovementActionsCallbackInterface != null)
+            if (m_Wrapper.m_MapActionsCallbackInterface != null)
             {
-                @Scalling.started -= m_Wrapper.m_MovementActionsCallbackInterface.OnScalling;
-                @Scalling.performed -= m_Wrapper.m_MovementActionsCallbackInterface.OnScalling;
-                @Scalling.canceled -= m_Wrapper.m_MovementActionsCallbackInterface.OnScalling;
+                @StartScale.started -= m_Wrapper.m_MapActionsCallbackInterface.OnStartScale;
+                @StartScale.performed -= m_Wrapper.m_MapActionsCallbackInterface.OnStartScale;
+                @StartScale.canceled -= m_Wrapper.m_MapActionsCallbackInterface.OnStartScale;
+                @StopScale.started -= m_Wrapper.m_MapActionsCallbackInterface.OnStopScale;
+                @StopScale.performed -= m_Wrapper.m_MapActionsCallbackInterface.OnStopScale;
+                @StopScale.canceled -= m_Wrapper.m_MapActionsCallbackInterface.OnStopScale;
             }
-            m_Wrapper.m_MovementActionsCallbackInterface = instance;
+            m_Wrapper.m_MapActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Scalling.started += instance.OnScalling;
-                @Scalling.performed += instance.OnScalling;
-                @Scalling.canceled += instance.OnScalling;
+                @StartScale.started += instance.OnStartScale;
+                @StartScale.performed += instance.OnStartScale;
+                @StartScale.canceled += instance.OnStartScale;
+                @StopScale.started += instance.OnStopScale;
+                @StopScale.performed += instance.OnStopScale;
+                @StopScale.canceled += instance.OnStopScale;
             }
         }
     }
-    public MovementActions @Movement => new MovementActions(this);
-    public interface IMovementActions
+    public MapActions @Map => new MapActions(this);
+    public interface IMapActions
     {
-        void OnScalling(InputAction.CallbackContext context);
+        void OnStartScale(InputAction.CallbackContext context);
+        void OnStopScale(InputAction.CallbackContext context);
     }
 }
