@@ -21,12 +21,6 @@ public class GridGrab : MonoBehaviour
     private bool bothGrab = false;
     public GameControlls ButtonsMap;
 
-    public void Start()
-    {
-        //var ctr = GameObject.FindObjectsOfType<GameObject>();
-        //hand1 = ctr[0]; //TODO make it better
-        //hand2 = ctr[1];
-    }
     public void OnStartScale(InputValue input)
     {
         print("pressed ");
@@ -64,10 +58,9 @@ public class GridGrab : MonoBehaviour
             Vector3 newScale = new Vector3(p * initialObjectScale.x, p * initialObjectScale.y, p * initialObjectScale.z); // calculate new object scale with p
 
             transform.rotation = handRot * initialObjectRotation; // add rotation
-            transform.localScale = newScale; // set new scale XXX  Input localScale is { Infinity, Infinity, Infinity }.
+            transform.localScale = newScale; // set new scale
 
             // set the position of the object to the center of both hands based on the original object direction relative to the new scale and rotation
-            /*XXXX  Input position is { NaN, NaN, NaN }.*/
             transform.position = (0.5f * (currentHandPosition1 + currentHandPosition2)) + (handRot * (initialObjectDirection * p));
 
         }
