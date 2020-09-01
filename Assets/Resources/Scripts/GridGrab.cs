@@ -6,11 +6,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class GridGrab : MonoBehaviour
 {
-    public XRBaseInteractor referenceHandLeft = null;
-    public XRBaseInteractor referenceHandRight = null;
-
-    private XRBaseInteractor hand1 =null;
-    private XRBaseInteractor hand2 = null;
+    public XRBaseInteractor hand1 =null;
+    public XRBaseInteractor hand2 = null;
 
     private Vector3 initialHandPosition1 = Vector3.zero;
     private Vector3 initialHandPosition2 = Vector3.zero;
@@ -23,25 +20,17 @@ public class GridGrab : MonoBehaviour
 
     private bool bothGrab = false;
     public GameControlls ButtonsMap;
-    void Start()
-    {
-
-        //ButtonsMap.Map.StopScale.canceled += 
-        if(hand2 == null)
-        {
-            initialHandPosition1 = hand1.attachTransform.localPosition;
-            initialHandPosition2 = hand2.attachTransform.localPosition;
-            initialObjectRotation = transform.rotation;
-            initialObjectScale = transform.localScale;
-            initialObjectDirection = transform.position - (initialHandPosition1 + initialHandPosition2) * 0.5f;
-        }
-
-    }
 
     public void OnStartScale(InputValue input)
     {
         print("pressed ");
         bothGrab = true;
+
+        initialHandPosition1 = hand1.attachTransform.localPosition;
+        initialHandPosition2 = hand2.attachTransform.localPosition;
+        initialObjectRotation = transform.rotation;
+        initialObjectScale = transform.localScale;
+        initialObjectDirection = transform.position - (initialHandPosition1 + initialHandPosition2) * 0.5f;
     }
     public void OnStopScale(InputValue input)
     {
@@ -52,7 +41,7 @@ public class GridGrab : MonoBehaviour
     public void Update() 
     {
 
-        if (false && referenceHandLeft != null && referenceHandRight != null)
+        if (bothGrab)
         {
             Vector3 currentHandPosition1 = hand1.attachTransform.position; // current first hand position
             Vector3 currentHandPosition2 = hand2.attachTransform.position; // current second hand position
@@ -69,9 +58,10 @@ public class GridGrab : MonoBehaviour
             Vector3 newScale = new Vector3(p * initialObjectScale.x, p * initialObjectScale.y, p * initialObjectScale.z); // calculate new object scale with p
 
             transform.rotation = handRot * initialObjectRotation; // add rotation
-            transform.localScale = newScale; // set new scale
+            transform.localScale = newScale; // set new scale XXX  Input localScale is { Infinity, Infinity, Infinity }.
 
             // set the position of the object to the center of both hands based on the original object direction relative to the new scale and rotation
+            /*XXXX  Input position is { NaN, NaN, NaN }.*/
             transform.position = (0.5f * (currentHandPosition1 + currentHandPosition2)) + (handRot * (initialObjectDirection * p));
 
         }
