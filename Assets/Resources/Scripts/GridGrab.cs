@@ -6,8 +6,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class GridGrab : MonoBehaviour
 {
-    public XRBaseInteractor hand1 =null;
-    public XRBaseInteractor hand2 = null;
+    public GameObject hand1 =null;
+    public GameObject hand2 = null;
 
     private Vector3 initialHandPosition1 = Vector3.zero;
     private Vector3 initialHandPosition2 = Vector3.zero;
@@ -21,13 +21,19 @@ public class GridGrab : MonoBehaviour
     private bool bothGrab = false;
     public GameControlls ButtonsMap;
 
+    public void Start()
+    {
+        //var ctr = GameObject.FindObjectsOfType<GameObject>();
+        //hand1 = ctr[0]; //TODO make it better
+        //hand2 = ctr[1];
+    }
     public void OnStartScale(InputValue input)
     {
         print("pressed ");
         bothGrab = true;
 
-        initialHandPosition1 = hand1.attachTransform.localPosition;
-        initialHandPosition2 = hand2.attachTransform.localPosition;
+        initialHandPosition1 = hand1.transform.localPosition;
+        initialHandPosition2 = hand2.transform.localPosition;
         initialObjectRotation = transform.rotation;
         initialObjectScale = transform.localScale;
         initialObjectDirection = transform.position - (initialHandPosition1 + initialHandPosition2) * 0.5f;
@@ -43,8 +49,8 @@ public class GridGrab : MonoBehaviour
 
         if (bothGrab)
         {
-            Vector3 currentHandPosition1 = hand1.attachTransform.position; // current first hand position
-            Vector3 currentHandPosition2 = hand2.attachTransform.position; // current second hand position
+            Vector3 currentHandPosition1 = hand1.transform.position; // current first hand position
+            Vector3 currentHandPosition2 = hand2.transform.position; // current second hand position
 
             Vector3 handDir1 = (initialHandPosition1 - initialHandPosition2).normalized; // direction vector of initial first and second hand position
             Vector3 handDir2 = (currentHandPosition1 - currentHandPosition2).normalized; // direction vector of current first and second hand position 

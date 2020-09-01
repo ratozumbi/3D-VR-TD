@@ -886,8 +886,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccdb65b7bfeff7b47af241bc57e9929b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hand1: {fileID: 1105152437}
-  hand2: {fileID: 1626793147}
+  hand1: {fileID: 1105152434}
+  hand2: {fileID: 1626793144}
 --- !u!54 &1762277001
 Rigidbody:
   m_ObjectHideFlags: 0
