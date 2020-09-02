@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public CubeGrid cubeGrid;
+    public GameGrid cubeGrid;
     public Vector3 target;
     public List<Vector3> path;
     public Vector3 gridPosition = Vector3.zero;
@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
             UpdatePath();
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, path[currPath], speed* Time.deltaTime);
+        transform.localPosition = Vector3.MoveTowards(transform.position, path[currPath], speed* Time.deltaTime);
         if(Vector3.Distance(path[currPath], transform.position)<0.01f)
         {
             currPath++;

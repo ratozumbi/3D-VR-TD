@@ -751,15 +751,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1762276996}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7028cb4d0b44ae94882a32c349856bf4, type: 3}
+  m_Script: {fileID: 11500000, guid: df05bb743754075459f4e692d7c427db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cubeEmpty: {fileID: 1256114073403042997, guid: 6ed7d92436e1b9f43a89a3e25fa89fb6,
     type: 3}
   cubeStart: {fileID: 1256114073403042997, guid: 857d74a323ab94a499752cac41307b25,
     type: 3}
-  cubeTarget: {fileID: 1256114073403042997, guid: 25be64c6d7c70624c990d15f9b039c05,
-    type: 3}
+  cubeEnd: {fileID: 1256114073403042997, guid: 25be64c6d7c70624c990d15f9b039c05, type: 3}
   cubeBlock: {fileID: 1256114073403042997, guid: 4e07d6d1bdd80db469f3613522efcc4c,
     type: 3}
   textObj: {fileID: 9098687926562852945, guid: c4c242a3ae355d04d93f68722e0f35fd, type: 3}

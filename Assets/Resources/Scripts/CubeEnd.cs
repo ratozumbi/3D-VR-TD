@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CubeTarget : Cube
+public class CubeEnd : Cube
 {
     // Start is called before the first frame update
     void Start()
     {
         //TODO get object instead of only one script?
-        cubeGrid = GameObject.FindGameObjectWithTag("Grid").GetComponent<CubeGrid>();
+        cubeGrid = GameObject.FindGameObjectWithTag("Grid").GetComponent<GameGrid>();
         type = CubeType.end;
     }
 

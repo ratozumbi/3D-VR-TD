@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public abstract class Cube : MonoBehaviour
 {
-    public CubeGrid cubeGrid;
+    public GameGrid cubeGrid;
 
     public enum CubeType
     {
@@ -17,7 +17,7 @@ public abstract class Cube : MonoBehaviour
 
     private void Start()
     {
-        cubeGrid = GameObject.FindGameObjectWithTag("Grid").GetComponent<CubeGrid>();
+        cubeGrid = GameObject.FindGameObjectWithTag("Grid").GetComponent<GameGrid>();
     }
     
 }

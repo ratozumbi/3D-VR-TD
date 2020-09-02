@@ -1,11 +1,11 @@
 ﻿
 using UnityEngine;
 
-public class CubeGrid : MonoBehaviour
+public class GameGrid : MonoBehaviour
 {
     public GameObject cubeEmpty;
     public GameObject cubeStart;
-    public GameObject cubeTarget;
+    public GameObject cubeEnd;
     public GameObject cubeBlock;
     public GameObject textObj;
 
@@ -13,8 +13,8 @@ public class CubeGrid : MonoBehaviour
 
     internal GameObject[,,] grid;
     internal GameObject[,,] textGrid;
-    internal Vector3 start;
-    internal Vector3 target;
+    internal Vector3 cubeStart_Position;
+    internal Vector3 cubeEnd_Position;
 
     internal Vector3[,,] gridVec3;
 
@@ -33,14 +33,14 @@ public class CubeGrid : MonoBehaviour
 
         do
         {
-            start.x = Random.Range(0, size);
-            start.y = Random.Range(0, size);
-            start.z = Random.Range(0, size);
+            cubeStart_Position.x = Random.Range(0, size);
+            cubeStart_Position.y = Random.Range(0, size);
+            cubeStart_Position.z = Random.Range(0, size);
 
-            target.x = Random.Range(0, size);
-            target.y = Random.Range(0, size);
-            target.z = Random.Range(0, size);
-        } while (Vector3.Distance(start, target) < (size));
+            cubeEnd_Position.x = Random.Range(0, size);
+            cubeEnd_Position.y = Random.Range(0, size);
+            cubeEnd_Position.z = Random.Range(0, size);
+        } while (Vector3.Distance(cubeStart_Position, cubeEnd_Position) < (size));
 
         
         for (int x = 0; x < size; x++)
@@ -52,14 +52,14 @@ public class CubeGrid : MonoBehaviour
                     GameObject goCube = null;
                     var willBlock = Random.value < 0.1f ? true : false;
 
-                    if (Util.vec3eq(new Vector3(x, y, z), start))
+                    if (Util.vec3eq(new Vector3(x, y, z), cubeStart_Position))
                     {
-                        goCube = grid[x, y, z] = Instantiate(cubeStart, start, Quaternion.identity, transform);
-                        goCube.GetComponent<CubeStart>().target = target;
+                        goCube = grid[x, y, z] = Instantiate(cubeStart, cubeStart_Position, Quaternion.identity, transform);
+                        goCube.GetComponent<CubeStart>().cubeEnd_Position = cubeEnd_Position;
                     }
-                    else if (Util.vec3eq(new Vector3(x, y, z), target))
+                    else if (Util.vec3eq(new Vector3(x, y, z), cubeEnd_Position))
                     {
-                        goCube = grid[x, y, z] = Instantiate(cubeTarget, target, Quaternion.identity, transform);
+                        goCube = grid[x, y, z] = Instantiate(cubeEnd, cubeEnd_Position, Quaternion.identity, transform);
                     }
                     else
                     {
