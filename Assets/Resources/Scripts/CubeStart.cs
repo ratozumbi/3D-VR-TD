@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class CubeStart : Cube
 {
+    public LineRenderer gridLineRenderer;
     public List<Vector3> path = new List<Vector3>();
     public Vector3 cubeEnd_Position;
     void Start()
     {
+        gridLineRenderer = cubeGrid.GetComponent<LineRenderer>();
         type = CubeType.start;
         UpdatePath();
     }
@@ -21,17 +23,17 @@ public class CubeStart : Cube
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            var go = Instantiate(Resources.Load<GameObject>("Prefabs/Enemy"), transform.localPosition, Quaternion.identity, transform.parent);
+            var go = Instantiate(Resources.Load<GameObject>("Prefabs/Enemy"), transform.position, Quaternion.identity, transform.parent);
             go.GetComponent<Enemy>().cubeGrid = cubeGrid;
             go.GetComponent<Enemy>().path = path;
-            go.GetComponent<Enemy>().target = cubeEnd_Position;
+            go.GetComponent<Enemy>().cubeEnd_Position = cubeEnd_Position;
         }
     }
 
     void UpdatePath()
     {
-        path = Util.FindPath(cubeGrid.gridVec3, cubeGrid.size, Util.ToGridPosition(gameObject), cubeEnd_Position, cubeGrid.checkBlockBlocking);
-        GetComponent<LineRenderer>().positionCount = path.Count;
-        GetComponent<LineRenderer>().SetPositions(path.ToArray());
+        path = Util.FindPath(cubeGrid.gridVec3, cubeGrid.size, Util.ToGridPosition(gameObject), cubeEnd_Position, cubeGrid.checkCubeBlocking);
+        gridLineRenderer.positionCount = path.Count;
+        gridLineRenderer.SetPositions(path.ToArray());
     }
 }

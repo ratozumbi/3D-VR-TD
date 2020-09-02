@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameGrid cubeGrid;
-    public Vector3 target;
+    public Vector3 cubeEnd_Position;
     public List<Vector3> path;
     public Vector3 gridPosition = Vector3.zero;
 
@@ -25,8 +25,8 @@ public class Enemy : MonoBehaviour
             UpdatePath();
         }
 
-        transform.localPosition = Vector3.MoveTowards(transform.position, path[currPath], speed* Time.deltaTime);
-        if(Vector3.Distance(path[currPath], transform.position)<0.01f)
+        transform.localPosition = Vector3.MoveTowards(transform.localPosition, path[currPath], speed * Time.deltaTime);
+        if (Vector3.Distance(path[currPath], transform.localPosition)<0.01f)
         {
             currPath++;
         }
@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
     void UpdatePath()
     {
         currPath = 0;
-        var path = Util.FindPath(cubeGrid.gridVec3, cubeGrid.size, gridPosition, target, cubeGrid.checkBlockBlocking);
+        var path = Util.FindPath(cubeGrid.gridVec3, cubeGrid.size, gridPosition, cubeEnd_Position, cubeGrid.checkCubeBlocking);
         GetComponent<LineRenderer>().positionCount = path.Count;
         GetComponent<LineRenderer>().SetPositions(path.ToArray());
 

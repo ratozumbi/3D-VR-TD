@@ -50,6 +50,7 @@ public static class Util
     /// <param name="start">The start node</param>
     /// <param name="end">The end node</param>
     /// <returns>A Vector3 list of points in path from start to end</returns>
+    /// TODO: break into grid construction and pathfinding
     public static List<Vector3> FindPath(Vector3[,,] inMatrix, int dimensionSize, Vector3 start, Vector3 end, Func<Vector3, bool> specialCheck)
     {
 
