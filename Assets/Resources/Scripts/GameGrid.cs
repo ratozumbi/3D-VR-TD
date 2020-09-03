@@ -30,7 +30,6 @@ public class GameGrid : MonoBehaviour
     {
         cubeStart.GetComponent<CubeStart>().cubeGrid = this;
 
-
         do
         {
             cubeStart_Position.x = Random.Range(0, size);
