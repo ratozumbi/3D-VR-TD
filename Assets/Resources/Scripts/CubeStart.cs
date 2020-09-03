@@ -30,7 +30,7 @@ public class CubeStart : Cube
         }
     }
 
-    void UpdatePath()
+    public void UpdatePath()
     {
         path = Util.FindPath(cubeGrid.gridVec3, cubeGrid.size, Util.ToGridPosition(gameObject), cubeEnd_Position, cubeGrid.checkCubeBlocking);
         gridLineRenderer.positionCount = path.Count;

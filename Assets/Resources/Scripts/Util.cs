@@ -11,6 +11,7 @@ public static class Util
             left.z == right.z);
     }
 
+    //refactor to int Vector3
     public static Vector3 ToGridPosition(GameObject go)
     {
         return new Vector3(Util.toInt(go.transform.localPosition.x), Util.toInt(go.transform.localPosition.y), Util.toInt(go.transform.localPosition.z));
@@ -18,6 +19,11 @@ public static class Util
     public static GameObject ObjFromGrid(GameObject[,,] mat, Vector3 pos)
     {
         return mat[Util.toInt(pos.x), Util.toInt(pos.y), Util.toInt(pos.z)];
+    }
+
+    public static GameObject ObjFromGrid(GameObject[,,] mat, GameObject pos)
+    {
+        return mat[Util.toInt(pos.transform.localPosition.x), Util.toInt(pos.transform.localPosition.y), Util.toInt(pos.transform.localPosition.z)];
     }
 
     public static Tuple<int, int, int> CoordinatesOf<T>( T value,  T[,,] inMatrix)
