@@ -24,12 +24,12 @@ public abstract class Cube : XRBaseInteractable
 
     public void SetValidSelection()
     {
-        selection = Instantiate(Resources.Load<GameObject>("Prefabs/ValidGridSelection"), transform.position, Quaternion.identity, transform.parent);
+        selection = Instantiate(Resources.Load<GameObject>("Prefabs/ValidGridSelection"), transform.position, transform.rotation, transform);
     }
 
     public void SetInvalidSelection()
     {
-        selection = Instantiate(Resources.Load<GameObject>("Prefabs/InvalidGridSelection"), transform.position, Quaternion.identity, transform.parent);
+        selection = Instantiate(Resources.Load<GameObject>("Prefabs/InvalidGridSelection"), transform.position, transform.rotation, transform);
     }
 
     protected override void OnHoverEnter(XRBaseInteractor interactor)

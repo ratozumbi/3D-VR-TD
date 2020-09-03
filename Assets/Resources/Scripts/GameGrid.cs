@@ -50,16 +50,19 @@ public class GameGrid : MonoBehaviour
                 {
                     GameObject goCube = null;
                     var willBlock = Random.value < 0.1f ? true : false;
-
+                    
+                    //cube start
                     if (Util.vec3eq(new Vector3(x, y, z), cubeStart_Position))
                     {
                         goCube = grid[x, y, z] = Instantiate(cubeStart, cubeStart_Position, Quaternion.identity, transform);
                         goCube.GetComponent<CubeStart>().cubeEnd_Position = cubeEnd_Position;
                     }
+                    //cube end
                     else if (Util.vec3eq(new Vector3(x, y, z), cubeEnd_Position))
                     {
                         goCube = grid[x, y, z] = Instantiate(cubeEnd, cubeEnd_Position, Quaternion.identity, transform);
                     }
+                    //empty or block
                     else
                     {
                         if (willBlock)
