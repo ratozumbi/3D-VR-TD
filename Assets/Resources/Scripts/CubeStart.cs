@@ -9,8 +9,10 @@ public class CubeStart : Cube
     public Vector3 cubeEnd_Position;
     void Start()
     {
+        cubeGrid = GameObject.FindGameObjectWithTag("Grid").GetComponent<GameGrid>();
         gridLineRenderer = cubeGrid.GetComponent<LineRenderer>();
         type = CubeType.start;
+        OnCubeChanged += UpdatePath;
         UpdatePath();
     }
 

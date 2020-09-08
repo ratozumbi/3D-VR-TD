@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.Events;
+
 public abstract class Cube : XRBaseInteractable
 {
     public GameGrid cubeGrid;
 
     protected GameObject selection;
+
+    public event Action OnCubeChanged;
 
     public enum CubeType
     {
@@ -17,7 +21,7 @@ public abstract class Cube : XRBaseInteractable
     }
     public CubeType type;
 
-    public void Start()
+    public void Awake()
     {
         cubeGrid = GameObject.FindGameObjectWithTag("Grid").GetComponent<GameGrid>();
     }
@@ -36,7 +40,7 @@ public abstract class Cube : XRBaseInteractable
     {
         base.OnHoverEnter(interactor);
         if (selection != null) return;
-        
+
         if (type == CubeType.empty)
         {
             SetValidSelection();
@@ -54,6 +58,11 @@ public abstract class Cube : XRBaseInteractable
         {
             Destroy(selection);
         }
+    }
+
+    protected void NotifyCubeChanged()
+    {
+        OnCubeChanged?.Invoke();
     }
 
 }

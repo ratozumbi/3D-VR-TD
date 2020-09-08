@@ -11,6 +11,13 @@ public static class Util
             left.z == right.z);
     }
 
+    /// <summary>
+    /// Funtion used in update 
+    /// </summary>
+    /// <param name="go">The game object to get the grid position </param>
+    /// <returns>Vector3 as grid position</returns>
+    /// TODO: Check out of bounds
+    /// TODO: IntVector3
     public static Vector3 ToGridPosition(GameObject go)
     {
         return new Vector3(Util.toInt(go.transform.localPosition.x), Util.toInt(go.transform.localPosition.y), Util.toInt(go.transform.localPosition.z));

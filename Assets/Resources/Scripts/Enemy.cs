@@ -15,7 +15,12 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        cubeGrid = GameObject.FindGameObjectWithTag("Grid").GetComponent<GameGrid>();
         UpdatePath();
+        foreach(var objCube in cubeGrid.grid)
+        {
+            objCube.GetComponent<Cube>().OnCubeChanged += UpdatePath;
+        }
     }
 
     public void Update()
@@ -37,6 +42,7 @@ public class Enemy : MonoBehaviour
 
     void UpdatePath()
     {
+
         currPath = 0;
         var path = Util.FindPath(cubeGrid.gridVec3, cubeGrid.size, gridPosition, cubeEnd_Position, cubeGrid.checkCubeBlocking);
         GetComponent<LineRenderer>().positionCount = path.Count;

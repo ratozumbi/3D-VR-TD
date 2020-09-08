@@ -23,6 +23,7 @@ public class CubeEmpty : Cube
         var go = Instantiate(Resources.Load<GameObject>("Prefabs/CubeBlock"), transform.position, transform.rotation, transform.parent);
         cubeGrid.grid[Util.toInt(transform.position.x), Util.toInt(transform.position.y), Util.toInt(transform.position.z)] = go;
         shouldSelfDestroy = true;
+        base.NotifyCubeChanged();
         if (selection != null)
         {
             Destroy(selection);
