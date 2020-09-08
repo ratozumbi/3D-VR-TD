@@ -21,7 +21,7 @@ public abstract class Cube : XRBaseInteractable
     }
     public CubeType type;
 
-    public void Awake()
+    public void Start()
     {
         cubeGrid = GameObject.FindGameObjectWithTag("Grid").GetComponent<GameGrid>();
     }
