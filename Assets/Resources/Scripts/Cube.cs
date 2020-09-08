@@ -6,7 +6,7 @@ public abstract class Cube : XRBaseInteractable
 {
     public GameGrid cubeGrid;
 
-    private GameObject selection;
+    protected GameObject selection;
 
     public enum CubeType
     {
@@ -17,7 +17,7 @@ public abstract class Cube : XRBaseInteractable
     }
     public CubeType type;
 
-    private void Start()
+    public void Start()
     {
         cubeGrid = GameObject.FindGameObjectWithTag("Grid").GetComponent<GameGrid>();
     }

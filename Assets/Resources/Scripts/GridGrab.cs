@@ -23,7 +23,6 @@ public class GridGrab : MonoBehaviour
 
     public void OnStartScale(InputValue input)
     {
-        print("pressed ");
         bothGrab = true;
 
         initialHandPosition1 = hand1.transform.localPosition;
@@ -34,7 +33,6 @@ public class GridGrab : MonoBehaviour
     }
     public void OnStopScale(InputValue input)
     {
-        print("pressed stop");
         bothGrab = false;
     }
 

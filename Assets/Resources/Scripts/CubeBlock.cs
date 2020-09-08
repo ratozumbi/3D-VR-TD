@@ -9,6 +9,7 @@ public class CubeBlock : Cube
     void Start()
     {
         type = CubeType.block;
+        cubeGrid = GameObject.FindGameObjectWithTag("Grid").GetComponent<GameGrid>();
     }
 
     // Update is called once per frame

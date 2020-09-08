@@ -1,4 +1,4 @@
-# VR Tower Defence
+# VR Tower Defense
 
 This is a game made in Unity3D, using XR Interaction Toolkit and the new Input System.
 
