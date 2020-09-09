@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeGrid: {fileID: 0}
-  target: {x: 0, y: 0, z: 0}
+  cubeEnd_Position: {x: 0, y: 0, z: 0}
   path: []
   gridPosition: {x: 0, y: 0, z: 0}
   speed: 1
@@ -120,7 +120,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4006946888832567950}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -131,7 +131,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b203b375f17a2c443913b2f5ddb62d3f, type: 2}
+  - {fileID: 2100000, guid: 178959bad9ba41443969522336b956e8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -160,8 +160,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0.0039358214
+        time: 0.2060318
+        value: 0.22893429
         inSlope: 0
         outSlope: 0
         tangentMode: 0

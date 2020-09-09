@@ -10,7 +10,7 @@ public abstract class Cube : XRBaseInteractable
 
     protected GameObject selection;
 
-    public event Action OnCubeChanged;
+    public UnityEvent CubeChanged;
 
     public enum CubeType
     {
@@ -60,9 +60,9 @@ public abstract class Cube : XRBaseInteractable
         }
     }
 
-    protected void NotifyCubeChanged()
+    protected virtual void OnCubeChanged()
     {
-        OnCubeChanged?.Invoke();
+        CubeChanged?.Invoke();
     }
 
 }

@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour
     public GameGrid cubeGrid;
     public Vector3 cubeEnd_Position;
     public List<Vector3> path;
-    public Vector3 gridPosition = Vector3.zero;
 
     public float speed = 2.0f;
 
@@ -19,7 +18,7 @@ public class Enemy : MonoBehaviour
         UpdatePath();
         foreach(var objCube in cubeGrid.grid)
         {
-            objCube.GetComponent<Cube>().OnCubeChanged += UpdatePath;
+            objCube.GetComponent<Cube>().CubeChanged.AddListener(UpdatePath);
         }
     }
 
@@ -36,15 +35,13 @@ public class Enemy : MonoBehaviour
             currPath++;
         }
 
-        gridPosition = Util.ToGridPosition(gameObject);
-
     }
 
     void UpdatePath()
     {
 
         currPath = 0;
-        var path = Util.FindPath(cubeGrid.gridVec3, cubeGrid.size, gridPosition, cubeEnd_Position, cubeGrid.checkCubeBlocking);
+        path = Util.FindPath(cubeGrid.gridVec3, cubeGrid.size, Util.ToGridPosition(gameObject), cubeEnd_Position, cubeGrid.checkCubeBlocking);
         GetComponent<LineRenderer>().positionCount = path.Count;
         GetComponent<LineRenderer>().SetPositions(path.ToArray());
 

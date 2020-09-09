@@ -12,7 +12,10 @@ public class CubeStart : Cube
         cubeGrid = GameObject.FindGameObjectWithTag("Grid").GetComponent<GameGrid>();
         gridLineRenderer = cubeGrid.GetComponent<LineRenderer>();
         type = CubeType.start;
-        OnCubeChanged += UpdatePath;
+        foreach (var objCube in cubeGrid.grid)
+        {
+            objCube.GetComponent<Cube>().CubeChanged.AddListener(UpdatePath);
+        }
         UpdatePath();
     }
 

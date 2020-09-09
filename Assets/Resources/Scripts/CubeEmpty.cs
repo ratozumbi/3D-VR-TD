@@ -21,9 +21,9 @@ public class CubeEmpty : Cube
     public void Activate()
     {
         var go = Instantiate(Resources.Load<GameObject>("Prefabs/CubeBlock"), transform.position, transform.rotation, transform.parent);
-        cubeGrid.grid[Util.toInt(transform.position.x), Util.toInt(transform.position.y), Util.toInt(transform.position.z)] = go;
+        cubeGrid.grid[Util.toInt(transform.localPosition.x), Util.toInt(transform.localPosition.y), Util.toInt(transform.localPosition.z)] = go;
         shouldSelfDestroy = true;
-        base.NotifyCubeChanged();
+        OnCubeChanged();
         if (selection != null)
         {
             Destroy(selection);
@@ -37,4 +37,10 @@ public class CubeEmpty : Cube
             Destroy(gameObject);
         }
     }
+
+    protected override void OnCubeChanged()
+    {
+        base.OnCubeChanged();
+    }
+
 }
