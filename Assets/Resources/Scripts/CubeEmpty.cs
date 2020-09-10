@@ -8,8 +8,9 @@ public class CubeEmpty : Cube
     // Start is called before the first frame update
     void Start()
     {
+        base.Start();
         type = CubeType.empty;
-        cubeGrid = GameObject.FindGameObjectWithTag("Grid").GetComponent<GameGrid>();
+        //cubeGrid = GameObject.FindGameObjectWithTag("Grid").GetComponent<GameGrid>();
     }
 
     // Update is called once per frame

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +12,8 @@ public class Enemy : MonoBehaviour
     public float speed = 2.0f;
 
     private int currPath = 0;
+
+    public int life = 3;
 
     void Start()
     {
@@ -35,6 +38,11 @@ public class Enemy : MonoBehaviour
             currPath++;
         }
 
+    }
+
+    public void GetHit()
+    {
+        life--;
     }
 
     void UpdatePath()
