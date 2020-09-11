@@ -17,32 +17,33 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        cubeGrid = GameObject.FindGameObjectWithTag("Grid").GetComponent<GameGrid>();
-        UpdatePath();
-        foreach(var objCube in cubeGrid.grid)
-        {
-            objCube.GetComponent<Cube>().CubeChanged.AddListener(UpdatePath);
-        }
+        //cubeGrid = GameObject.FindGameObjectWithTag("Grid").GetComponent<GameGrid>();
+        //UpdatePath();
+        //foreach(var objCube in cubeGrid.grid)
+        //{
+        //    objCube.GetComponent<Cube>().CubeChanged.AddListener(UpdatePath);
+        //}
     }
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            UpdatePath();
-        }
+        //if (Input.GetKeyDown(KeyCode.Return))
+        //{
+        //    UpdatePath();
+        //}
 
-        transform.localPosition = Vector3.MoveTowards(transform.localPosition, path[currPath], speed * Time.deltaTime);
-        if (Vector3.Distance(path[currPath], transform.localPosition)<0.01f)
-        {
-            currPath++;
-        }
+        //transform.localPosition = Vector3.MoveTowards(transform.localPosition, path[currPath], speed * Time.deltaTime);
+        //if (Vector3.Distance(path[currPath], transform.localPosition)<0.01f)
+        //{
+        //    currPath++;
+        //}
 
     }
 
     public void GetHit()
     {
         life--;
+        print("Got hit");
     }
 
     void UpdatePath()

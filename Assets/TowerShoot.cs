@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 //using UnityEngine.;
 
 public class TowerShoot : MonoBehaviour
@@ -11,7 +13,7 @@ public class TowerShoot : MonoBehaviour
 
     public LayerMask hitMask;
 
-    private GameObject target;
+    public GameObject target;
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +24,15 @@ public class TowerShoot : MonoBehaviour
     public void Shoot()
     {
         RaycastHit hit;
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.up));
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.up), out hit, Mathf.Infinity, hitMask))
         {
+            print("shoot ray");
             hit.transform.gameObject.GetComponent<Enemy>().GetHit();
+            var lineR = gameObject.GetComponentInParent<LineRenderer>();
+
+            lineR.SetPositions(new Vector3[2] { Vector3.zero, hit.transform.position });
+            GetComponent<LineRenderer>().SetPositions(new Vector3[2] { Vector3.zero, hit.transform.position});
         }
 
     }
@@ -39,10 +47,15 @@ public class TowerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (target == null)
+        if (Input.GetKey(KeyCode.Return))
+        {
+            Shoot();
+        }
+        if (target != null)
         {
 
-            transform.parent.transform.LookAt(target.transform.position, new Vector3(1, 0, 0));
+            transform.parent.transform.LookAt(target.transform);
+            transform.parent.localEulerAngles += new Vector3(90, 0, 0);
         }
     }
 }
