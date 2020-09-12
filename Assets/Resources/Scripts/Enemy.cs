@@ -18,22 +18,22 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        //cubeGrid = GameObject.FindGameObjectWithTag("Grid").GetComponent<GameGrid>();
-        //UpdatePath();
-        //foreach (var objCube in cubeGrid.grid)
-        //{
-        //    objCube.GetComponent<Cube>().CubeChanged.AddListener(UpdatePath);
-        //}
+        cubeGrid = GameObject.FindGameObjectWithTag("Grid").GetComponent<GameGrid>();
+        UpdatePath();
+        foreach (var objCube in cubeGrid.grid)
+        {
+            objCube.GetComponent<Cube>().CubeChanged.AddListener(UpdatePath);
+        }
     }
 
     public void Update()
     {
 
-        //transform.localPosition = Vector3.MoveTowards(transform.localPosition, path[currPath], moveSpeed * Time.deltaTime);
-        //if (Vector3.Distance(path[currPath], transform.localPosition) < 0.01f)
-        //{
-        //    currPath++;
-        //}
+        transform.localPosition = Vector3.MoveTowards(transform.localPosition, path[currPath], moveSpeed * Time.deltaTime);
+        if (Vector3.Distance(path[currPath], transform.localPosition) < 0.01f)
+        {
+            currPath++;
+        }
 
 
         if (life <= 0)

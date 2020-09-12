@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 178959bad9ba41443969522336b956e8, type: 2}
+  - {fileID: 2100000, guid: d83fbdfb603e8074eadeb9cef48056a1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -138,6 +138,9 @@ MonoBehaviour:
       m_Calls: []
   m_CustomReticle: {fileID: 0}
   cubeGrid: {fileID: 0}
+  CubeChanged:
+    m_PersistentCalls:
+      m_Calls: []
   type: 1
   gridLineRenderer: {fileID: 0}
   path: []

@@ -28,7 +28,7 @@ public class CubeStart : Cube
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            var go = Instantiate(Resources.Load<GameObject>("Prefabs/Enemy"), transform.position, transform.rotation , transform.parent);
+            var go = Instantiate(Resources.Load<GameObject>("Prefabs/Attack/Enemy"), transform.position, transform.rotation , transform.parent);
             go.GetComponent<Enemy>().cubeGrid = cubeGrid;
             go.GetComponent<Enemy>().path = path;
             go.GetComponent<Enemy>().moveTo = cubeEnd_Position;

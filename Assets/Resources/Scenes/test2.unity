@@ -382,19 +382,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1404226333, guid: 3de061d5826efbc4e8beeb303706e215, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1404226336, guid: 3de061d5826efbc4e8beeb303706e215, type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1354025816272866601, guid: 3de061d5826efbc4e8beeb303706e215,
-        type: 3}
-      propertyPath: hitMask.m_Bits
-      value: 16384
-      objectReference: {fileID: 0}
     - target: {fileID: 7436304723165910372, guid: 3de061d5826efbc4e8beeb303706e215,
         type: 3}
       propertyPath: m_Name
@@ -455,8 +442,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1404226334, guid: 3de061d5826efbc4e8beeb303706e215, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3de061d5826efbc4e8beeb303706e215, type: 3}
 --- !u!1 &1979962712
 GameObject:
@@ -548,16 +534,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8664598424097242371, guid: 251b7d1e44653a841997d73dfcf9c354,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4006946888832567945, guid: 251b7d1e44653a841997d73dfcf9c354,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4006946888832567946, guid: 251b7d1e44653a841997d73dfcf9c354,
         type: 3}
       propertyPath: m_LocalPosition.x
