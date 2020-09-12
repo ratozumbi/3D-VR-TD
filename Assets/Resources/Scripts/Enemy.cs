@@ -6,20 +6,21 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameGrid cubeGrid;
-    public Vector3 cubeEnd_Position;
-    public List<Vector3> path;
+    public float moveSpeed = 2.0f;
+    public Vector3 moveTo;
 
-    public float speed = 2.0f;
+
+    public List<Vector3> path;
 
     private int currPath = 0;
 
-    public int life = 3;
+    public int life = 30;
 
     void Start()
     {
         //cubeGrid = GameObject.FindGameObjectWithTag("Grid").GetComponent<GameGrid>();
         //UpdatePath();
-        //foreach(var objCube in cubeGrid.grid)
+        //foreach (var objCube in cubeGrid.grid)
         //{
         //    objCube.GetComponent<Cube>().CubeChanged.AddListener(UpdatePath);
         //}
@@ -27,32 +28,31 @@ public class Enemy : MonoBehaviour
 
     public void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Return))
-        //{
-        //    UpdatePath();
-        //}
 
-        //transform.localPosition = Vector3.MoveTowards(transform.localPosition, path[currPath], speed * Time.deltaTime);
-        //if (Vector3.Distance(path[currPath], transform.localPosition)<0.01f)
+        //transform.localPosition = Vector3.MoveTowards(transform.localPosition, path[currPath], moveSpeed * Time.deltaTime);
+        //if (Vector3.Distance(path[currPath], transform.localPosition) < 0.01f)
         //{
         //    currPath++;
         //}
 
+
+        if (life <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void GetHit()
     {
         life--;
-        print("Got hit");
+        print("Got hit!");
     }
 
     void UpdatePath()
     {
 
         currPath = 0;
-        path = Util.FindPath(cubeGrid.gridVec3, cubeGrid.size, Util.ToGridPosition(gameObject), cubeEnd_Position, cubeGrid.checkCubeBlocking);
-        GetComponent<LineRenderer>().positionCount = path.Count;
-        GetComponent<LineRenderer>().SetPositions(path.ToArray());
+        path = Util.FindPath(cubeGrid.gridVec3, cubeGrid.size, Util.ToGridPosition(gameObject), moveTo, cubeGrid.checkCubeBlocking);
 
     }
 

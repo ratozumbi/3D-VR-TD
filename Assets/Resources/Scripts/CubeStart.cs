@@ -31,7 +31,7 @@ public class CubeStart : Cube
             var go = Instantiate(Resources.Load<GameObject>("Prefabs/Enemy"), transform.position, transform.rotation , transform.parent);
             go.GetComponent<Enemy>().cubeGrid = cubeGrid;
             go.GetComponent<Enemy>().path = path;
-            go.GetComponent<Enemy>().cubeEnd_Position = cubeEnd_Position;
+            go.GetComponent<Enemy>().moveTo = cubeEnd_Position;
         }
     }
 
