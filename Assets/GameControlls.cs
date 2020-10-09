@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/GameControlls.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/MapScalleControlls.inputactions'
 
 using System;
 using System.Collections;
@@ -6,13 +6,13 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-public class @GameControlls : IInputActionCollection, IDisposable
+public class @MapScalleControlls : IInputActionCollection, IDisposable
 {
     public InputActionAsset asset { get; }
-    public @GameControlls()
+    public @MapScalleControlls()
     {
         asset = InputActionAsset.FromJson(@"{
-    ""name"": ""GameControlls"",
+    ""name"": ""MapScalleControlls"",
     ""maps"": [
         {
             ""name"": ""Map"",
@@ -164,8 +164,8 @@ public class @GameControlls : IInputActionCollection, IDisposable
     private readonly InputAction m_Map_StopScale;
     public struct MapActions
     {
-        private @GameControlls m_Wrapper;
-        public MapActions(@GameControlls wrapper) { m_Wrapper = wrapper; }
+        private @MapScalleControlls m_Wrapper;
+        public MapActions(@MapScalleControlls wrapper) { m_Wrapper = wrapper; }
         public InputAction @StartScale => m_Wrapper.m_Map_StartScale;
         public InputAction @StopScale => m_Wrapper.m_Map_StopScale;
         public InputActionMap Get() { return m_Wrapper.m_Map; }

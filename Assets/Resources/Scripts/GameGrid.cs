@@ -98,12 +98,20 @@ public class GameGrid : MonoBehaviour
 
         return "";  
     }
-    public bool checkCubeBlocking(Vector3 toCheck)
+    public bool checkBlocking(Vector3 toCheck)
     {
         var check = grid[Util.toInt(toCheck.x), Util.toInt(toCheck.y), Util.toInt(toCheck.z)];
-        if (check.GetComponent<Cube>().type == Cube.CubeType.block)
+        if (check.GetComponent<Cube>()?.type == Cube.CubeType.block)
             return true;
         else
-            return false;
+        {
+            if (check.tag =="Tower")
+                return true;
+            else
+                return false;
+        }
+
+        
+        
     }
 }

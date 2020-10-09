@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -175,5 +176,12 @@ public static class Util
     public static int toInt(float n)
     {
         return (int)Math.Round(n);
+    }
+    
+    //Superior to Invoke because methodo reference is not "lost" in a string (better code maintence)
+    public static IEnumerator TimedEvent(Func<int> evt,float time)
+    {
+        yield return new WaitForSeconds(time);
+        evt();
     }
 }

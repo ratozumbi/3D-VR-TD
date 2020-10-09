@@ -47,12 +47,18 @@ public class Enemy : MonoBehaviour
         life--;
         print("Got hit!");
     }
+    
+    public void GetHit(int damge)
+    {
+        life = life - damge;
+        print("Got hit!");
+    }
 
     void UpdatePath()
     {
 
         currPath = 0;
-        path = Util.FindPath(cubeGrid.gridVec3, cubeGrid.size, Util.ToGridPosition(gameObject), moveTo, cubeGrid.checkCubeBlocking);
+        path = Util.FindPath(cubeGrid.gridVec3, cubeGrid.size, Util.ToGridPosition(gameObject), moveTo, cubeGrid.checkBlocking);
 
     }
 

@@ -90,6 +90,33 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "Spawn",
+            "id": "777a719c-b463-49a4-82fb-02c32969719b",
+            "actions": [
+                {
+                    "name": "NewBall",
+                    "type": "Button",
+                    "id": "da6c42b5-5d9e-451c-bc90-a6b5ff69f913",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0f3c11ea-e975-4615-ab20-855008a32a4b",
+                    "path": "<XRController>{LeftHand}/secondaryButton",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NewBall",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

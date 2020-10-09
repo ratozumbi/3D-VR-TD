@@ -21,7 +21,7 @@ public class CubeEmpty : Cube
 
     public void Activate()
     {
-        var go = Instantiate(Resources.Load<GameObject>("Prefabs/CubeBlock"), transform.position, transform.rotation, transform.parent);
+        var go = Instantiate(Resources.Load<GameObject>("Prefabs/Defence/Tower"), transform.position, transform.rotation, transform.parent);
         cubeGrid.grid[Util.toInt(transform.localPosition.x), Util.toInt(transform.localPosition.y), Util.toInt(transform.localPosition.z)] = go;
         shouldSelfDestroy = true;
         OnCubeChanged();

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CubeStart : Cube
 {
@@ -37,8 +38,16 @@ public class CubeStart : Cube
 
     void UpdatePath()
     {
-        path = Util.FindPath(cubeGrid.gridVec3, cubeGrid.size, Util.ToGridPosition(gameObject), cubeEnd_Position, cubeGrid.checkCubeBlocking);
+        path = Util.FindPath(cubeGrid.gridVec3, cubeGrid.size, Util.ToGridPosition(gameObject), cubeEnd_Position, cubeGrid.checkBlocking);
         gridLineRenderer.positionCount = path.Count;
         gridLineRenderer.SetPositions(path.ToArray());
+    }
+
+    public void OnNewBall(InputValue input)
+    {
+        var go = Instantiate(Resources.Load<GameObject>("Prefabs/Attack/Enemy"), transform.position, transform.rotation , transform.parent);
+        go.GetComponent<Enemy>().cubeGrid = cubeGrid;
+        go.GetComponent<Enemy>().path = path;
+        go.GetComponent<Enemy>().moveTo = cubeEnd_Position;
     }
 }

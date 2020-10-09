@@ -19,7 +19,6 @@ public class GridGrab : MonoBehaviour
     private Transform origParent = null;
 
     private bool bothGrab = false;
-    public GameControlls ButtonsMap;
 
     public void OnStartScale(InputValue input)
     {
