@@ -52,7 +52,7 @@ public abstract class Cube : XRBaseInteractable
     }
     protected override void OnHoverExit(XRBaseInteractor interactor)
     {
-        base.OnHoverEnter(interactor);
+        base.OnHoverExit(interactor);
 
         if(selection != null)
         {

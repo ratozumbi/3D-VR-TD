@@ -20,30 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31531798-bc47-4ed0-93f9-23fa67a521d2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/GameControlls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameControlls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameControlls.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameControlls.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MapScalleControlls.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MapScalleControlls.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MapScalleControlls.inputactions" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MapScalleControlls.inputactions.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VR tower defence/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR tower defence/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/Cylinder.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Cylinder.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/CubeEnd.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/CubeEnd.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Attack/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Attack/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/CubeEmpty.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/CubeEmpty.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/CubeStart.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/CubeStart.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Defence/Tower.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Defence/Tower.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/Grid.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/Grid.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/test.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/test.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/CubeEmpty.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/CubeEmpty.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/CubeStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/CubeStart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/test2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/test2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Cube.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Cube.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/GameGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/GameGrid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/GridGrab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/GridGrab.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/TowerShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/TowerShoot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Util.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Util.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,17 +41,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@0.9.4-preview/Runtime/Interaction/Controllers/XRControllerRecorder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@0.9.4-preview/Runtime/Interaction/Controllers/XRControllerRecording.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Cube.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Empty.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Util.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/GridGrab.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/GameGrid.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/CubeStart.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/LookAtCamera.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/TowerShoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Cube.cs" />
       </list>
     </option>
   </component>
@@ -110,7 +103,10 @@
       <option name="presentableId" value="Default" />
       <updated>1602171234502</updated>
       <workItem from="1602171241899" duration="1985000" />
-      <workItem from="1602253316366" duration="5539000" />
+      <workItem from="1602253316366" duration="5829000" />
+      <workItem from="1602320091842" duration="2982000" />
+      <workItem from="1602600782615" duration="6336000" />
+      <workItem from="1602682517675" duration="5762000" />
     </task>
     <servers />
   </component>
@@ -129,6 +125,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
@@ -198,6 +195,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="375" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602182808905" />
+    <state x="552" y="252" key="Rider.ProjectTemplateDialog.Size" timestamp="1602335209631">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Rider.ProjectTemplateDialog.Size/0.0.1920.1040@0.0.1920.1040" timestamp="1602335209631" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1602262569763">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

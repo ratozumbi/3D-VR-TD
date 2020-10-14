@@ -53,8 +53,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.5, y: 11.0212965, z: 0.5}
+  m_Center: {x: 0, y: 5.0106483, z: 0}
 --- !u!54 &1404226336
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 7707130767757931198}
   - component: {fileID: 7953210398054055359}
   m_Layer: 0
-  m_Name: Tower
+  m_Name: TowerFoward
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

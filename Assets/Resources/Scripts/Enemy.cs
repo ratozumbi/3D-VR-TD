@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
         UpdatePath();
         foreach (var objCube in cubeGrid.grid)
         {
-            objCube.GetComponent<Cube>().CubeChanged.AddListener(UpdatePath);
+            objCube.GetComponent<Cube>()?.CubeChanged.AddListener(UpdatePath);
         }
     }
 
