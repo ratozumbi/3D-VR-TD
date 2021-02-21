@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class BasicBall : MonoBehaviour
 {
     public GameGrid cubeGrid;
     public float moveSpeed = 2.0f;
@@ -16,9 +16,32 @@ public class Enemy : MonoBehaviour
 
     public int life = 30;
 
+    public enum BallType
+    {
+        head,
+        body,
+        food
+    }
+
+    private BallType type;
+    private Vector3 whatIsFoward = Vector3.forward;//todo:check
+
+    public void SetTypeFood()
+    {
+        type = BallType.food;
+    }
+    
+    
+    
     void Start()
     {
         cubeGrid = GameObject.FindGameObjectWithTag("Grid").GetComponent<GameGrid>();
+
+        if (type == BallType.head)
+        {
+            path.Add(whatIsFoward);
+        }
+        
         UpdatePath();
         foreach (var objCube in cubeGrid.grid)
         {
@@ -29,12 +52,19 @@ public class Enemy : MonoBehaviour
     public void Update()
     {
 
-        transform.localPosition = Vector3.MoveTowards(transform.localPosition, path[currPath], moveSpeed * Time.deltaTime);
-        if (Vector3.Distance(path[currPath], transform.localPosition) < 0.01f)
+        if (type == BallType.head)
         {
-            currPath++;
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, path[currPath], moveSpeed * Time.deltaTime);
+            if (Vector3.Distance(path[currPath], transform.localPosition) < 0.0001f)
+            {
+                if (type == BallType.head)
+                {
+                    path.Add(whatIsFoward);
+                }
+                
+            }
         }
-
+        
 
         if (life <= 0)
         {
@@ -58,7 +88,8 @@ public class Enemy : MonoBehaviour
     {
 
         currPath = 0;
-        path = Util.FindPath(cubeGrid.gridVec3, cubeGrid.size, Util.ToGridPosition(gameObject), moveTo, cubeGrid.checkBlocking);
+
+        path = transform.parent.GetComponent<BasicBall>().path;
 
     }
 

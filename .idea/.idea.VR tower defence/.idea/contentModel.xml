@@ -10,12 +10,12 @@
         <e p="Resources" t="Include">
           <e p="Scripts" t="Include">
             <e p="BaseTower.cs" t="Include" />
+            <e p="BasicBall.cs" t="Include" />
             <e p="Cube.cs" t="Include" />
             <e p="CubeBlock.cs" t="Include" />
             <e p="CubeEmpty.cs" t="Include" />
             <e p="CubeEnd.cs" t="Include" />
             <e p="CubeStart.cs" t="Include" />
-            <e p="Enemy.cs" t="Include" />
             <e p="GameGrid.cs" t="Include" />
             <e p="GridGrab.cs" t="Include" />
             <e p="LookAtCamera.cs" t="Include" />

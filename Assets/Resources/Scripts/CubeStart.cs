@@ -29,10 +29,12 @@ public class CubeStart : Cube
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            var go = Instantiate(Resources.Load<GameObject>("Prefabs/Attack/Enemy"), transform.position, transform.rotation , transform.parent);
-            go.GetComponent<Enemy>().cubeGrid = cubeGrid;
-            go.GetComponent<Enemy>().path = path;
-            go.GetComponent<Enemy>().moveTo = cubeEnd_Position;
+            var go = Instantiate(Resources.Load<GameObject>("Prefabs/Attack/BasicBall"), transform.position, transform.rotation , transform.parent);
+            go.GetComponent<BasicBall>().cubeGrid = cubeGrid;
+            go.GetComponent<BasicBall>().path = path;
+            go.GetComponent<BasicBall>().moveTo = cubeEnd_Position;
+            go.GetComponent<BasicBall>().SetTypeFood();
+            
         }
     }
 
@@ -46,14 +48,10 @@ public class CubeStart : Cube
     public void OnNewBall(InputValue input)
     {
         print("new ball");
-        var go = Instantiate(Resources.Load<GameObject>("Prefabs/Attack/Enemy"), transform.position, transform.rotation , transform.parent);
-        go.GetComponent<Enemy>().cubeGrid = cubeGrid;
-        go.GetComponent<Enemy>().path = path;
-        go.GetComponent<Enemy>().moveTo = cubeEnd_Position;
-    }
-
-    public string sTest()
-    {
-        return "test";
+        //todo: pegar uma posição aleatória da grid para instanciar ball tipo food
+        var go = Instantiate(Resources.Load<GameObject>("Prefabs/Attack/BasicBall"), transform.position, transform.rotation , transform.parent);
+        go.GetComponent<BasicBall>().cubeGrid = cubeGrid;
+        go.GetComponent<BasicBall>().path = path;
+        go.GetComponent<BasicBall>().moveTo = cubeEnd_Position;
     }
 }

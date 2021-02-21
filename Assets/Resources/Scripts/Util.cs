@@ -25,6 +25,7 @@ public static class Util
     }
     public static GameObject ObjFromGrid(GameObject[,,] mat, Vector3 pos)
     {
+        //todo: the drift from the head on the grid might accumulate and generate a wrong return value here
         return mat[Util.toInt(pos.x), Util.toInt(pos.y), Util.toInt(pos.z)];
     }
 

@@ -34,7 +34,7 @@ public class TowerShoot : MonoBehaviour
         Debug.DrawRay(transform.position, angle,Color.magenta,2f);
         if (Physics.Raycast(transform.position, angle, out hit, Mathf.Infinity, radar.hitMask))
         {
-            hit.transform.gameObject.GetComponent<Enemy>().GetHit(damage);
+            hit.transform.gameObject.GetComponent<BasicBall>().GetHit(damage);
 
             print("shoot2" );
             myAnimator.Play("TowerShoot");
