@@ -255,7 +255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 772f7f2ef5d52754eac1220520b9e484,
     type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 1
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -269,6 +269,6 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 777a719c-b463-49a4-82fb-02c32969719b
+  m_DefaultActionMap: Spawn
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

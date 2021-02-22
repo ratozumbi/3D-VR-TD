@@ -157,6 +157,6 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: d6d8f35c-bb70-416a-8f59-c9de555599b9
+  m_DefaultActionMap: Snake
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

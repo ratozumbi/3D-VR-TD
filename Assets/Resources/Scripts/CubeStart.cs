@@ -48,7 +48,6 @@ public class CubeStart : Cube
     public void OnNewBall(InputValue input)
     {
         print("new ball");
-        //todo: pegar uma posição aleatória da grid para instanciar ball tipo food
         var go = Instantiate(Resources.Load<GameObject>("Prefabs/Attack/BasicBall"), transform.position, transform.rotation , transform.parent);
         go.GetComponent<BasicBall>().cubeGrid = cubeGrid;
         go.GetComponent<BasicBall>().path = path;

@@ -37,7 +37,7 @@
                 {
                     "name": "modifier",
                     "id": "7feb9789-3509-401b-b9ec-4024ac6277d5",
-                    "path": "<XRController>{RightHand}/gripPressed",
+                    "path": "<XRInputV1::Oculus::OpenVRControllerQuestRightControllerRight>{RightHand}/grippressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -48,7 +48,7 @@
                 {
                     "name": "button",
                     "id": "9ebb7797-8af9-4823-b2f9-65c44ac34b09",
-                    "path": "<XRController>{LeftHand}/gripPressed",
+                    "path": "<XRInputV1::Oculus::OpenVRControllerQuestLeftControllerLeft>{LeftHand}/grippressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -70,7 +70,7 @@
                 {
                     "name": "modifier",
                     "id": "56b6c546-e1db-4dbd-a539-392223967592",
-                    "path": "<XRController>{RightHand}/gripPressed",
+                    "path": "<XRInputV1::Oculus::OpenVRControllerQuestRightControllerRight>{RightHand}/grippressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -81,7 +81,7 @@
                 {
                     "name": "button",
                     "id": "f2029c9b-07c7-424f-babc-bdff0935e378",
-                    "path": "<XRController>{LeftHand}/gripPressed",
+                    "path": "<XRInputV1::Oculus::OpenVRControllerQuestLeftControllerLeft>{LeftHand}/grippressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -108,19 +108,8 @@
                 {
                     "name": "",
                     "id": "0f3c11ea-e975-4615-ab20-855008a32a4b",
-                    "path": "<XRController>{LeftHand}/secondaryButton",
+                    "path": "<XRInputV1::Oculus::OpenVRControllerQuestRightControllerRight>{RightHand}/primary",
                     "interactions": "Press",
-                    "processors": "",
-                    "groups": "",
-                    "action": "NewBall",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d294f8d4-8c9b-43b0-96ce-06d0b65a785b",
-                    "path": "<XRInputV1::Oculus::OpenVRControllerQuestRightControllerRight>/primary",
-                    "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "NewBall",
@@ -139,7 +128,7 @@
                     "id": "cde4ee4c-dcc3-41a4-94ff-92a22cc812e8",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
                 },
                 {
                     "name": "MoveUp",
@@ -147,20 +136,12 @@
                     "id": "20e7ef37-62e0-4377-90fd-acd99eb69819",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
                 },
                 {
-                    "name": "MoveLeft",
+                    "name": "Move",
                     "type": "Button",
-                    "id": "4136bbc7-4e75-43c8-bd48-46a1c93a0b2c",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "MoveRight",
-                    "type": "Button",
-                    "id": "877aef2d-1c4b-4f9c-a7bc-b984a11c32b2",
+                    "id": "a15baef5-b2fe-4de1-88d9-cf8b62adac9c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -170,7 +151,7 @@
                 {
                     "name": "",
                     "id": "d20a32dc-7a2b-46c5-950a-9a7416b62a7b",
-                    "path": "<XRController>{RightHand}/primaryButton",
+                    "path": "<XRInputV1::Oculus::OpenVRControllerQuestLeftControllerLeft>{LeftHand}/alternate",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",
@@ -181,7 +162,7 @@
                 {
                     "name": "",
                     "id": "d14f5e6b-10b4-49fc-9a82-e44bdb13726e",
-                    "path": "<XRController>{RightHand}/secondaryButton",
+                    "path": "<XRInputV1::Oculus::OpenVRControllerQuestLeftControllerLeft>{LeftHand}/primary",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",
@@ -190,26 +171,59 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "3bce6248-d542-4d6c-a85e-c9f5cdf2f080",
-                    "path": "<Joystick>/stick/left",
-                    "interactions": "Press",
+                    "name": "XRcontroller",
+                    "id": "07aef79f-3023-491d-8f99-b4ffd06d57f3",
+                    "path": "2DVector(mode=2)",
+                    "interactions": "Tap",
                     "processors": "",
                     "groups": "",
-                    "action": "MoveLeft",
-                    "isComposite": false,
+                    "action": "Move",
+                    "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "f6f48bb3-1ef5-4ecc-8454-bddb542b7321",
-                    "path": "<Joystick>/stick/right",
-                    "interactions": "Press",
+                    "name": "up",
+                    "id": "a8520369-50a6-4b0e-ad64-d1558d75d597",
+                    "path": "<XRInputV1::Oculus::OpenVRControllerQuestLeftControllerLeft>{LeftHand}/primary2daxis",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MoveRight",
+                    "action": "Move",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "2e0c300c-c21a-4e15-848e-aa72be70e567",
+                    "path": "<XRInputV1::Oculus::OpenVRControllerQuestLeftControllerLeft>{LeftHand}/primary2daxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "ac01d439-eb2c-41eb-8fe0-6d902fdb3c8e",
+                    "path": "<XRInputV1::Oculus::OpenVRControllerQuestLeftControllerLeft>{LeftHand}/primary2daxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "ecc817a7-550d-4d69-bd64-2a88a3e36b14",
+                    "path": "<XRInputV1::Oculus::OpenVRControllerQuestLeftControllerLeft>{LeftHand}/primary2daxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
