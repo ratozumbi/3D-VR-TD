@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Composites;
+using UnityEngine.XR;
 
 public class BasicBall : MonoBehaviour
 {
@@ -74,12 +75,12 @@ public class BasicBall : MonoBehaviour
         bufferWhatIsFoward = Vector3.right;
     }
     
-    public void OnMove(InputValue input)
+    public void OnMove(Vector2Composite input)
     {
-        Debug.Log("move "+ vec2.x + " "+vec2.y );
-        var vec2 = input.Get<Vector2>();
-
-        bufferWhatIsFoward = new Vector3(vec2.x,0,vec2.y).normalized;
+        Debug.Log("try " + input.up);
+        
+         // Debug.Log("move "+ vec2.x + " "+vec2.y );
+        // bufferWhatIsFoward = new Vector3(vec2.x,0,vec2.y).normalized;
     }
 
 

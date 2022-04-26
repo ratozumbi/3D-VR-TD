@@ -171,59 +171,15 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "XRcontroller",
-                    "id": "07aef79f-3023-491d-8f99-b4ffd06d57f3",
-                    "path": "2DVector(mode=2)",
-                    "interactions": "Tap",
+                    "name": "",
+                    "id": "0724ccce-019b-40d8-ad10-52fb203671c3",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Move",
-                    "isComposite": true,
+                    "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "a8520369-50a6-4b0e-ad64-d1558d75d597",
-                    "path": "<XRInputV1::Oculus::OpenVRControllerQuestLeftControllerLeft>{LeftHand}/primary2daxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "2e0c300c-c21a-4e15-848e-aa72be70e567",
-                    "path": "<XRInputV1::Oculus::OpenVRControllerQuestLeftControllerLeft>{LeftHand}/primary2daxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "ac01d439-eb2c-41eb-8fe0-6d902fdb3c8e",
-                    "path": "<XRInputV1::Oculus::OpenVRControllerQuestLeftControllerLeft>{LeftHand}/primary2daxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "ecc817a7-550d-4d69-bd64-2a88a3e36b14",
-                    "path": "<XRInputV1::Oculus::OpenVRControllerQuestLeftControllerLeft>{LeftHand}/primary2daxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 }
             ]
         }
