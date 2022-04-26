@@ -11,10 +11,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31531798-bc47-4ed0-93f9-23fa67a521d2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VR tower defence/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR tower defence/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VR tower defence/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR tower defence/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VR tower defence/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR tower defence/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameControlls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameControlls.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/BasicBall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/BasicBall.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/CubeBlock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/CubeBlock.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/CubeEmpty.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/CubeEmpty.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/CubeEnd.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/CubeEnd.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/CubeStart.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/CubeStart.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/BaseTower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/BaseTower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Cube.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Cube.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/OffsetGrab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/OffsetGrab.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,10 +33,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.2/InputSystem/Actions/InputActionMap.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.2/InputSystem/InputManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@0.9.4-preview/Runtime/Interaction/Controllers/XRControllerRecorder.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@0.9.4-preview/Runtime/Interaction/Controllers/XRControllerRecording.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.0.1/Editor/Interaction/Layers/InteractionLayerUpdater.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -36,15 +41,16 @@
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Empty.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/LookAtCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/TowerShoot.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Cube.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/GameGrid.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/BaseTower.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/GridGrab.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Util.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/TheOnlyClassWorthLooking.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/CubeStart.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/BasicBall.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/BaseTower.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Cube.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/OffsetGrab.cs" />
       </list>
     </option>
   </component>
@@ -64,10 +70,10 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="15100">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="15100" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -114,6 +120,7 @@
       <workItem from="1613960230332" duration="601000" />
       <workItem from="1613964779131" duration="1811000" />
       <workItem from="1613966614401" duration="1045000" />
+      <workItem from="1651012681007" duration="693000" />
     </task>
     <servers />
   </component>
@@ -214,24 +221,5 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="638" y="253" width="644" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609776163121" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.2/InputSystem/InputManager.cs</url>
-          <line>2918</line>
-          <properties documentPath="D:\dev\VR tower defence\Library\PackageCache\com.unity.inputsystem@1.0.2\InputSystem\InputManager.cs" initialLine="2918">
-            <startOffsets>
-              <option value="132134" />
-            </startOffsets>
-            <endOffsets>
-              <option value="132310" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

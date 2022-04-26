@@ -27,17 +27,17 @@ public abstract class BaseTower : XRBaseInteractable
         selection = Instantiate(Resources.Load<GameObject>("Prefabs/InvalidGridSelection"), transform.position, transform.rotation, transform);
     }
 
-    protected override void OnHoverEnter(XRBaseInteractor interactor)
+    protected override void OnHoverEntered(XRBaseInteractor interactor)
     {
-        base.OnHoverEnter(interactor);
+        base.OnHoverEntered(interactor);
         if (selection != null) return;
         
         SetInvalidSelection();
         
     }
-    protected override void OnHoverExit(XRBaseInteractor interactor)
+    protected override void OnHoverExited(XRBaseInteractor interactor)
     {
-        base.OnHoverExit(interactor);
+        base.OnHoverExited(interactor);
 
         if(selection != null)
         {

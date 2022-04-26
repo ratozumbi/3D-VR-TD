@@ -21,9 +21,9 @@ public class OffsetGrab : XRGrabInteractable
         throwOnDetach = false;
     }
 
-    protected override void OnSelectEnter(XRBaseInteractor interactor)
+    protected override void OnSelectEntered(XRBaseInteractor interactor)
     {
-        base.OnSelectEnter(interactor);
+        base.OnSelectEntered(interactor);
         StoreInteractor(interactor);
         MatchAttachmentPoints(interactor);
 
@@ -43,9 +43,9 @@ public class OffsetGrab : XRGrabInteractable
         interactor.attachTransform.rotation = hasAttachment ? attachTransform.rotation : transform.rotation;
     }
 
-    protected override void OnSelectExit(XRBaseInteractor interactor)
+    protected override void OnSelectExited(XRBaseInteractor interactor)
     {
-        base.OnSelectExit(interactor);
+        base.OnSelectExited(interactor);
         ResetAttachmentPoints(interactor);
         ClearInteractor(interactor);
     }
